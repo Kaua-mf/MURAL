@@ -1,0 +1,74 @@
+/* 1. Configurações Globais e Overrides */
+:root {
+    --bs-primary: #0056b3; 
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-warning: #ffc107;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400; 
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+.post-card.favorite {
+    border: 1px solid var(--bs-warning);
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3) !important;
+}
+
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.favorite-btn {
+    --bs-btn-color: var(--bs-gray-500);
+    --bs-btn-border-color: var(--bs-gray-400);
+    --bs-btn-hover-color: var(--bs-warning);
+    --bs-btn-hover-border-color: var(--bs-warning);
+    --bs-btn-hover-bg: transparent;
+}
+
+.favorite-btn.active {
+    --bs-btn-color: var(--bs-warning);
+    --bs-btn-border-color: var(--bs-warning);
+}
+
+#loading-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#save-button .spinner-border {
+    display: none;
+}
+
+#save-button.loading .spinner-border {
+    display: inline-block; 
+}
+#save-button.loading span:not(.spinner-border) {
+    display: none; 
+}
+#save-button.loading .spinner-border {
+    display: inline-block;
+}
+#save-button.loading::after {
+    content: "Salvando..."; 
+}
